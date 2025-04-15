@@ -1,0 +1,137 @@
+.main-bar {
+    width: calc(100% - 300px - 24px);
+    float: left;
+    margin: 25px 0px;
+    padding: 0;
+  }
+.tag-h1{
+    margin-top:50px ;
+    font-weight: 400;
+}
+
+.tag-p{
+    margin: 0px;
+    font-size: 50px;
+    max-width: 600px;
+}
+
+
+.tags-list-container{
+    padding: 30px 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap:10px
+}
+
+.tag-item{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    word-break: break-all;
+    word-wrap: break-word;
+
+}
+.tag-item h3{
+    font-size: 15px;
+    margin: 0;
+    color: #ffffff; /* Màu chữ trắng */
+    background-color: var(--primary-color); /* Màu nền màu cam */
+    padding: 10px 15px; /* Thêm khoảng cách bên trong */
+    border-radius: 8px; /* Làm mềm các góc */
+    display: inline-block; /* Để kích thước tự động theo nội dung */
+    cursor: pointer; /* Thay đổi con trỏ khi di chuột qua */
+}
+.tag-item h3:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.tag h5{
+    display: inline-block;
+    margin: 10px 0px;
+    padding: 5px 5px;
+    background-color: #e1ecf4;
+    color: #39739d;
+}
+
+.tag p{
+ font-size: 14px;
+ color: #323232;
+ line-height: 17px;
+}
+
+.main-bar{
+    width: calc(100% - 300px - 24px);
+    float: left;
+    margin: 25px 0px;
+    padding: 0;
+}
+.card-tags {
+    --bg: #f7f7f8;
+    --hover-bg: linear-gradient(145deg, #bb5888, #ef8236);
+    --hover-text: var(--white);
+    max-width: 23ch;
+    text-align: center;
+    background: var(--bg);
+    padding: 1.5em;
+    padding-block: 1.8em;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: .3s cubic-bezier(.6,.4,0,1),transform .15s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+  .card-tags:hover > strong {
+    opacity: 0; /* Làm cho chữ không hiển thị khi hover */
+    pointer-events: none; /* Ngăn chặn sự kiện chuột trên phần tử này */
+}
+  .card-tags__body {
+    color: #464853;
+    line-height: 1.5em;
+    font-size: 1em;
+  }
+  
+  .card-tags > :not(span) {
+    transition: .3s cubic-bezier(.6,.4,0,1);
+  }
+  
+  .card-tags > strong {
+    display: block;
+    font-size: 1.4rem;
+    letter-spacing: -.035em;
+  }
+  
+  .card-tags span {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--hover-text);
+    border-radius: 5px;
+    font-weight: bold;
+    top: 100%;
+    transition: all .3s cubic-bezier(.6,.4,0,1);
+  }
+  
+  .card-tags:hover span {
+    top: 0;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  
+  .card-tags:hover {
+    background: var(--hover-bg);
+  }
+  
+  .card-tags:hover>div,.card:hover>strong {
+    opacity: 0;
+  }

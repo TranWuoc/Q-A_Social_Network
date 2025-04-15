@@ -1,0 +1,68 @@
+/* From Uiverse.io by Shreya-3107 */ 
+.cardWidgeTags {
+    width: 290px;
+    height: 300px;
+    background: var(--primary-color);
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--white);
+    border-radius: 15px;
+    box-shadow: -20px 20px 0px -5px var(--dark-orange);
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .title {
+    font-weight: 900;
+    font-size: 1.7em;
+  }
+  
+  .tag__name {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.1em;
+    background-color:var(--dark-orange);
+    padding: 6px 23px 9px;
+    border-radius: 70em;
+    margin: 8px 6px 8px 0;
+    margin-left: 0px;
+    position: relative;
+    text-transform: lowercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .tag__name::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #605348;
+  }
+  
+  .tag__name::before {
+    left: 7px;
+  }
+  
+  .tag__name::after {
+    right: 7px;
+  }
+  
+  .tag__name:hover {
+    transform: scale(1.1);
+    background-color: var(--brown);
+  }
+  .card__tags ul {
+    padding: 5px 5px;
+    margin: 3px;
+    font-size: 13px;
+    border-radius: 2px;
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 22px;
+  }
+  

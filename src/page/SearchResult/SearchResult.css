@@ -1,0 +1,79 @@
+/* Container for the entire search results page */
+.search-results-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header for the search results */
+  .search-results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-results-header h1 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #333;
+  }
+  
+  .search-results-header .search-input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Container for individual search result items */
+  .search-result-item {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .search-result-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title of the search result item */
+  .search-result-item h2 {
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  .search-result-item h2 a {
+    text-decoration: none;
+
+  }
+    
+  .search-result-item h3 a {
+    text-decoration: none;
+
+  }
+  .search-result-item h2 a:hover {
+    text-decoration: none;
+  }
+  
+  /* Description of the search result item */
+  .search-result-item p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  /* Metadata of the search result item */
+  .search-result-item .metadata {
+    font-size: 14px;
+    color: #999;
+  }

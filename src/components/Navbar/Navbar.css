@@ -1,0 +1,251 @@
+.main-nav {
+    min-height: 50px;
+    width: 100%;
+    border-top: solid 3px #ef8236;
+    box-shadow: 0px 1px 5px #00000033;
+    position: fixed;
+    z-index: 5;
+    background-color: #f8f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    height: 100%;
+    min-width: 85%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.nav-logo {
+    padding: 5px 25px;
+}
+
+.nav-item {
+    font-size: small;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgba(69, 69, 69, 0.774);
+    transition: 0.2s;
+}
+.nav-btn{
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.nav-btn:hover {
+    background-color: rgb(226, 226, 226);
+    transform: scale(1.02);
+}
+
+.nav-item:hover {
+    background-color: rgb(226, 226, 226);
+}
+
+.nav-links {
+    padding: 0.6em;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 400;
+    background-color: #ffffff00;
+    border: none;
+    border-radius: 1rem;
+    /* Thay đổi thành 50% để tạo hình tròn */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    width: 30px;
+    height: 30px;
+}
+.nav-links:hover {
+    background-color: #fdfdfd;
+    box-shadow: 0px 15px 20px rgb(255, 189, 67);
+
+}
+.nav-links img {
+    width: 30px; /* Đặt chiều rộng của hình ảnh */
+    height: 30px; /* Đặt chiều cao của hình ảnh */
+    object-fit: contain; /* Giữ tỉ lệ khung hình của hình ảnh */
+    margin: 0 auto; /* Tạo lề tự động để căn giữa hình ảnh */
+    transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển tiếp khi hover */
+}
+
+.nav-links:hover img {
+    transform: scale(1.2); /* Phóng to hình ảnh khi hover */
+}
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.search__input {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: #fff;
+    border: none;
+    color: var(--primary-color);
+    padding: 0.7rem 1rem;
+    border-radius: 30px;
+    width: 12em;
+    transition: all ease-in-out .5s;
+    width: 600px;
+}
+
+.search__input:hover,
+.search__input:focus {
+    box-shadow: 0 0 1em #00000013;
+}
+
+.search__input:focus {
+    outline: none;
+    background-color: #f0eeee;
+}
+
+.search__input::-webkit-input-placeholder {
+    font-weight: 100;
+    color: #ccc;
+}
+
+.search__input:focus+.search__button {
+    background-color: #f0eeee;
+}
+
+.search__button {
+    background-color: transparent;
+    margin-top: .1em;
+    border: none;
+}
+
+.search__button:hover {
+    cursor: pointer;
+}
+
+.search__icon {
+    height: 1.3em;
+    width: 1.3em;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .nav-item {
+        margin: 5px 0;
+    }
+
+    .navbar form {
+        width: 100%;
+    }
+
+    .navbar form input {
+        width: calc(100% - 40px);
+        /* Adjust width for mobile */
+    }
+    
+}/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .search__input {
+        width: 400px; /* Thu gọn chiều rộng */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Sắp xếp các thành phần theo cột */
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+    }
+
+    .nav-logo {
+        margin-bottom: 15px;
+    }
+
+    .search {
+        width: 100%; /* Chiếm toàn bộ chiều rộng */
+        margin-top: 10px;
+    }
+
+    .search__input {
+        width: 100%; /* Đầy chiều rộng cha */
+        padding: 0.6rem 0.8rem;
+        font-size: 14px; /* Thu nhỏ kích thước chữ */
+    }
+
+    .search__button {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search__input {
+        font-size: 12px; /* Nhỏ hơn cho thiết bị nhỏ */
+        padding: 0.5rem 0.7rem;
+    }
+
+    .nav-btn {
+        padding: 8px 15px;
+    }
+
+    .nav-links {
+        width: 40px; /* Giảm kích thước */
+        height: 40px;
+        font-size: 10px; /* Giảm kích thước chữ */
+    }
+}
+/* From Uiverse.io by vinodjangid07 */ 
+.faq-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ffe53b;
+    background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.151);
+    position: relative;
+  }
+  .faq-button svg {
+    height: 1.5em;
+    fill: white;
+  }
+  .faq-button:hover svg {
+    animation: jello-vertical 0.7s both;
+  }
+  @keyframes jello-vertical {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    40% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    50% {
+      transform: scale3d(0.85, 1.15, 1);
+    }
+    65% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    75% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  .faq-icon {
+    color: rgb(255, 255, 255); 
+    font-size: 1em; 
+  }

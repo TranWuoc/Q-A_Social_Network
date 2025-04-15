@@ -1,0 +1,147 @@
+.ask-questions {
+    min-height: 100vh;
+    display: flex;
+    background-color: #f1f2f3;
+    align-items: center; /* Center vertically */
+}
+
+.ask-ques-container {
+    margin: auto;
+    max-width: 850px;
+    padding: 20px; /* Add padding for better spacing */
+    background-color: white; /* Background for the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 100%; /* Full width container */
+}
+
+.ask-ques-container h1 {
+    padding: 40px 0 20px; /* Adjusted padding */
+    text-align: center; /* Center the title */
+}
+
+.ask-image {
+    max-width: 400px; /* Smaller image size */
+    display: block;
+    margin: 0 auto 20px; /* Center the image with margin */
+}
+
+.each-label {
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9; /* Light background for input sections */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.ask-form-container label h4 {
+    margin-bottom: 5px; /* Slight space below the heading */
+}
+
+.ask-form-container label p {
+    margin: 0;
+    font-size: 14px;
+    color: #555; /* Darker text for better readability */
+}
+
+.input-field,
+.editor-field {
+    padding: 10px;
+    border: solid 1px #ccc; /* Light border */
+    border-radius: 3px;
+    width: calc(100% - 20px);
+}
+
+.review-btn {
+    margin: 40px 0;
+    padding: 10px 0;
+    background-color: #009dff;
+    border: none; /* No border */
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Full width .btn-submit */
+}
+
+.review-btn:hover {
+    background-color: #4682a7; /* Darker shade on hover */
+}
+/* From Uiverse.io by adamgiebl */ 
+.btn-submit {
+    font-family: inherit;
+    font-size: 20px;
+    background: -webkit-gradient(linear, left top, right top, from(var(--blue)), to(var(--dark-blue)));
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-left: 300px;
+  }
+  
+  .btn-submit span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-submit img {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .btn-submit:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+  
+  .btn-submit:hover img {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+  
+  .btn-submit:hover span {
+    transform: translateX(5em);
+  }
+  
+  .btn-submit:active {
+    transform: scale(0.95);
+  }
+  
+  @keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
+    }
+  
+    to {
+      transform: translateY(-0.1em);
+    }
+  }
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+  }
+  
+  .tag {
+    padding: 5px 5px;
+    margin: 3px;
+    font-size: 13px;
+    border-radius: 2px;
+    background-color: #e1ecf4;
+    color: #39739d;
+    text-decoration: none;
+    line-height: 22px;
+  }
+  
+  .remove-tag {
+    margin-left: 5px;
+    cursor: pointer;
+    color: red;
+
+  }

@@ -1,0 +1,95 @@
+:root {
+  --primary-color: #ef8236;
+  /* Định nghĩa biến màu */
+  --blue: #007bff;
+  --dark-blue: #0056b3;
+  --blue2:#037ecb;
+  --dark-blue2:#01447e;
+  --green: #28a745;
+  --dark-green: #218838;
+  --red: #dc3545;
+  --dark-red: #c82333;
+  --gray: #6c757d;
+  --dark-gray: #343a40;
+  --light-gray: #f8f9fa;
+  --white: #fff;
+  --black: #000;
+  --yellow: #f7b902;
+  --dark-yellow: #f48024;
+  --brown:#6f473f;
+  --dark-orange:#9e5518;
+}
+
+.home-container-1 {
+  min-height: 100vh;
+  max-width: 1250px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0% auto;
+}
+
+.home-container-2 {
+  max-width: 1100px;
+  width: calc(100% - 164px);
+  border-left: 1px solid #d6d9dc;
+  padding: 24px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  /* Ensure long words break to the next line */
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-width: 800px) {
+  .main-bar {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .Bountied {
+    display: none;
+  }
+
+  .Unanswered {
+    display: none;
+  }
+
+  .filter {
+    display: none;
+  }
+}
+
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 120%; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Adjust for arrow */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip-button:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}

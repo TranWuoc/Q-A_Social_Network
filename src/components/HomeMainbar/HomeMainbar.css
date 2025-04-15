@@ -1,0 +1,671 @@
+.main-bar1 {
+    width: calc(100% - 300px - 24px);
+    float: left;
+    margin: 25px 0px;
+    padding: 0;
+  }
+.main-bar2 {
+  float: left;
+  margin: 25px 0px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: space-around;
+  }
+  
+  /* ---------------------Main Bar Header----------------------- */
+  
+  .main-bar-header {
+    display: flex;
+    gap : 8px;
+    align-items: center;
+    
+  }
+  
+  .main-bar-header2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .main-bar-header2 h1 {
+    font-size: 32px; /* Thay bằng giá trị mong muốn cho fs-headline1 */
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
+/* .main-bar-header h1 {
+    font-weight: 400;
+} */
+/* ---------------------Info Container----------------------- */
+
+.info-container {
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa các phần tử */
+    margin-top: 30px;
+    flex-wrap: wrap; /* Cho phép các phần tử xuống dòng khi không đủ chỗ */
+  }
+  
+  .container-item {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(50% - 20px); /* Mỗi phần tử chiếm 50% chiều rộng, trừ đi khoảng cách giữa chúng */
+    min-width: 280px; /* Đảm bảo rằng các phần tử không thu nhỏ quá mức trên màn hình nhỏ */
+  }
+  
+  .container-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .container-item p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  
+  /* ---------------------Ask Question Button----------------------- */
+  
+  .ask-button {
+    display: grid;
+    place-items: center;
+    background: #e3edf7;
+    padding: 1.4em;
+    border-radius: 10px;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+          -6px -6px 10px -1px rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0);
+    cursor: pointer;
+    transition: transform 0.5s;
+  }
+  
+  .ask-button:hover {
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+    inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+    -0.5px -0.5px 0px rgba(255,255,255,1),
+    0.5px 0.5px 0px rgba(0,0,0,0.15),
+    0px 12px 10px -10px rgba(0,0,0,0.05);
+border: 1px solid rgba(0,0,0,0.1);
+transform: translateY(0.5em);
+  }
+  .ask-button svg {
+    margin-right: 8px;
+  }
+  .ask-button:hover svg {
+    transform: scale(0.9);
+  fill: #f30d0d;
+}
+  
+  /* ------------------------Main Bar Button 1------------------  */
+  
+  .main-bar-header .ask-btn-1 {
+    padding: 10px 15px;
+    border-radius: 4px;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .main-bar-header .ask-btn-1:hover {
+    background-color: #0086d8;
+  }
+  
+  /* ------------------------Main Bar Button 2------------------  */
+  
+  .ask-btn-2 {
+    padding: 9px 13px;
+    border: solid 1px gray;
+    background-color: white;
+    cursor: pointer;
+    font-size: 12px;
+    color: lightslategray;
+  }
+  
+  .ask-btn-2:hover {
+    background-color: gainsboro;
+  }
+  
+  /* ------------------------Filter------------------  */
+  
+  .filter {
+    margin-left: 20px;
+    border-radius: 3px;
+  }
+  
+  /* ---------------------Main Bar header 2----------------------- */
+  
+  .mainbar-header-buttons {
+    padding-top: 20px;
+    display: flex;
+
+    /* flex-wrap: wrap; */
+    /* border: solid 1px #000000; */
+    border-radius: 60px;
+    gap: 5px;
+  }
+  .btn-mainbar-header {
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+    border: none;
+    text-decoration: none;
+    transition: 0.3s;
+    }
+  .btn-mainbar-header:hover {
+    background-color: var(--primary-color);;
+  }
+  
+  /* --------------------Question Container---------------------- */
+  
+  .display-question-container {
+    min-height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-bottom: solid 1px #edeff0;
+  }
+  
+  .display-question-details {
+    flex-grow: 1;
+    padding: 5px 20px 30px 10px;
+  }
+  .display-question-details a {
+    word-break: break-all;
+
+  }
+  .question-body {
+    font-size: 14px;
+    color: #3a3a3a;
+  }
+  
+  .question-title-link {
+    text-decoration: none;
+    color: var(--blue2);
+    transition: 0.3s;
+  }
+  
+  .question-title-link:hover {
+    color: var(--blue);
+  }
+  
+  .display-question-details p {
+    padding: 4px;
+    margin: 0%;
+  }
+  
+  /* -------------------------Question Tags Time-------------------------- */
+  
+  .display-tags-time .display-tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .display-tags-time {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .display-tags-time .display-tags p {
+    margin: 2px;
+    padding: 4px;
+    font-size: 13px;
+    background-color: #edeff0;
+    color: #39739d;
+  }
+  .display-tags-time .display-tags span {
+    margin: 2px;
+    padding: 4px;
+    font-size: 13px;
+    background-color: #edeff0;
+    color: #39739d;
+  }
+  .display-tags-time .display-time {
+    font-size: 13px;
+  }
+  
+  /* -----------------------------Minimize Adjustment--------------------- */
+  
+  @media only screen and (max-width: 800px) {
+    .main-bar {
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .Bountied {
+      display: none;
+    }
+    .Unanswered {
+      display: none;
+    }
+    .filter {
+      display: none;
+    }
+  }
+  /* ---------------------User Questions List----------------------- */
+
+.user-questions-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .question-item {
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .question-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .question-title-link {
+    font-size: 1.2rem;
+    color: var(--blue2);
+    text-decoration: none;
+  }
+  
+  .question-title-link:hover {
+    color: var(--primary-color);
+    text-decoration: wavy;
+  }
+  
+  .no-questions-text {
+    font-size: 1rem;
+    color: #999;
+    font-style: italic;
+  }
+  .not-logged-in-container {
+    text-align: center;
+    margin: 50px auto;
+    width: 100%; /* Ensure full width */
+  }
+  
+  .illustration {
+    max-width: 400px;
+    margin: 0 auto 20px;
+  }
+  
+  .join-button {
+    background-color: var(--dark-yellow);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .join-button:hover {
+    background-color: #d8691a;
+  }
+  
+  .small-note {
+    font-size: 14px;
+    color: #666;
+  }
+  .link-button {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 48px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px; /* Control the width of the text */
+}
+
+.hero-text h1 {
+    font-size: 2.5rem; /* Adjust font size */
+    margin-bottom: 16px;
+}
+
+.developer-highlight {
+  background: linear-gradient(90deg, var(--primary-color), #860000); /* Gradient background */
+  background-clip: text; /* Standard property for compatibility */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make the text fill transparent to show the gradient */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for effects */
+}
+
+.developer-highlight:hover {
+  transform: scale(1.1); /* Slightly scale up on hover */
+  text-shadow: 0 2px 4px rgba(129, 0, 0, 0.3); /* Add shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition for effects */
+  cursor: default;
+}
+
+.hero-text p {
+    font-size: 1.2rem; /* Adjust font size */
+    margin-bottom: 24px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px; /* Space between buttons */
+}
+
+.sign-up-button,
+.visit-community-button {
+    background-color: var(--blue); /* Button color */
+    color: var(--white); /* Text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.sign-up-button:hover,
+.visit-community-button:hover {
+    background-color: var(--dark-blue); /* Darker shade on hover */
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;}
+
+.hero-image img {
+    width: 100%;
+}
+@media (max-width: 768px) {
+  .hero-container {
+      flex-direction: column; /* Stack elements on smaller screens */
+      padding: 24px; /* Adjust padding for smaller screens */
+  }
+}
+.form {
+  --col1: #fff;
+  --col2: #252325;
+  --col3: rgba(232, 213, 196, 0.9);
+  --col4: #ffffff;
+  --col5: #b44b1a;
+  --sh: rgba(80, 80, 80, 0.35);
+  --rad: 4px;
+  --radBig: 10px;
+  border-radius: 0 0 var(--radBig) var(--radBig);
+  box-shadow: 0 0 20px var(--sh);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em 1em;
+  padding: 1em;
+  position: relative;
+  max-height: 90px;
+  transition: background .3s ease-out, max-height .3s ease-out;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+
+.form::before {
+  content: 'Ready to ask a question?';
+  color: var(--col2);
+  font-size: 1.2em;
+  font-weight: 700;
+  display: grid;
+  width: calc(100% - 2em);
+  height: 60%;
+  position: absolute;
+  place-items: center;
+  z-index: 99999;
+}
+
+.form::after {
+  content: '';
+  backdrop-filter: blur(6px) grayscale(100%);
+  background: linear-gradient(-180deg, var(--primary-color) 0%, rgba(255,255,255,.5) 70%, rgba(255, 255, 255, 0.3) 90%);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: block;
+  position: absolute;
+  z-index: 999;
+}
+
+.form::after,
+.form::before {
+  border-radius: 0 0 var(--radBig) var(--radBig);
+  pointer-events: none;
+  transition: all .5s ease-out;
+}
+
+/* Form hover and focus */
+.form:hover,
+.form:focus-within {
+  max-width: 100%;
+  max-height: 380px;
+}
+
+.form:focus-within {
+  overflow: initial;
+}
+
+.form:hover::before,
+.form:hover::after {
+  opacity: 0;
+}
+
+.form:hover::after {
+  backdrop-filter: blur(0) grayscale(0%);
+}
+
+.form header {
+  color: var(--col1);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+/* Labels and inputs UI */
+:is(.form) label span, label input {
+  flex: 1 100%;
+  transition: all .3s ease-out;
+}
+
+:is(.form) input, select, button {
+  appearance: none;
+  border: 0;
+  padding: .75em;
+  border-radius: var(--rad);
+  transition: all .3s ease-out;
+}
+
+.form label {
+  display: flex;
+  flex-flow: row wrap;
+  color: var(--col4);
+  gap: .5em;
+}
+
+.form input {
+  box-shadow: inset 3px 3px 1px var(--sh);
+}
+
+.form fieldset {
+  display: flex;
+  backdrop-filter: blur(10px);
+  flex-flow: row nowrap;
+  gap: 1em;
+  position: relative;
+  transition: all .3s ease-out;
+  padding: 1rem;
+  z-index: 10;
+  border: 3px double var(--col1);
+  border-radius: var(--rad);
+}
+
+.form fieldset label {
+  flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+  font-size: .75em;
+}
+
+.sm {
+  justify-content: space-around;
+}
+
+.sm span {
+  text-align: center;
+}
+
+.form select {
+  box-shadow: inset 3px 3px 1px var(--sh);
+  padding: .75em 1.75em .75em 0.5em;
+  position: relative;
+}
+
+.custom-select {
+  position: relative;
+}
+
+.custom-select::after {
+  position: absolute;
+  content: "";
+  top: 45%;
+  right: 5px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: var(--col5) transparent transparent transparent;
+}
+
+.form fieldset span {
+  flex: 1 100%;
+}
+
+.form fieldset input {
+  flex: 0 1 40px;
+}
+
+.form button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: 4px solid var(--primary-color);
+  font-size: 1em;
+  font-weight: 700;
+  align-self: center;
+  padding: .5em 1.5em;
+  appearance: none;
+  transition: all .3s ease-out;
+}
+.form button:hover {
+  cursor: pointer;
+}
+/* Form and UI valid and invalid states */
+.form input:focus,
+.form select:focus {
+  outline: 3px solid var(--col3);
+  outline-offset: 1px;
+}
+
+.form input:invalid:not(:focus),
+.form select:invalid:not(:focus) {
+  background-color: var(--col3);
+  outline: 3px solid var(--col4);
+  outline-offset: 1px;
+}
+
+.form input:valid:not(:focus),
+.form select:valid:not(:focus) {
+  outline: 3px solid var(--col1);
+  outline-offset: 1px;
+}
+
+.form .message {
+  display: block;
+  opacity: 0;
+  font-size: .75em;
+  font-weight: 400;
+  transition: all .3s ease-out;
+  margin: -1rem 0 0;
+}
+
+.form:has(:invalid) .message {
+  opacity: 1;
+  margin: .25rem 0 0 0;
+}
+
+label:has(input:invalid),
+label:has(select:invalid) {
+  color: var(--col3);
+  opacity: .8;
+}
+
+label:has(input:valid),
+label:has(select:valid) {
+  opacity: 1;
+}
+
+.form:hover:has(:focus, :active):valid .submitCard {
+  max-height: 180px;
+  opacity: 1;
+  transition: opacity 1s ease-out .5s, translate 1.3s ease-out;
+  translate: 0 100%;
+}
+
+.form:hover:invalid {
+  transition: all .3s ease-out;
+  background-color: var(--col5);
+}
+
+.form:hover:valid {
+  transition: all .3s ease-out;
+  background-color: var(--col1);
+}
+
+.form:hover:valid * {
+  color: var(--col2);
+}
+
+.form:hover:valid input,
+.form:hover:valid select {
+  outline: 3px solid var(--col2);
+}
+
+.form:hover:invalid fieldset {
+  border: 1px dashed var(--col3);
+}
+
+.form:hover:valid fieldset {
+  border: 1px dashed var(--col2);
+}
+
+/* Submit block */
+.form .submitCard {
+  display: flex;
+  justify-content: center;
+  background-color: var(--col2);
+  border-radius: 0 0 var(--rad) var(--rad);
+  bottom: 0;
+  padding: .5em;
+  opacity: 0;
+  max-height: 0;
+  translate: 0 -100%;
+  position: absolute;
+  width: calc(100% - 2em);
+  transition: all .5s ease-out .1s;
+  z-index: -1;
+}
+
+

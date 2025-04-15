@@ -1,0 +1,101 @@
+.footer {
+    background-color: #232629; /* Màu nền */
+    color: #b9b9b9; /* Màu chữ */
+    padding: 40px 20px; /* Khoảng cách bên trong */
+    font-size: 14px;
+  }
+  
+  .footer-container {
+    display: flex;
+    align-items: flex-start; /* Căn phần tử theo chiều dọc */
+    flex-wrap: wrap; /* Xuống dòng khi không đủ chỗ */
+    gap: 20px;
+  }
+  
+  .footer-logo {
+    flex: 0 0 150px; /* Logo cố định chiều rộng */
+    display: flex;
+    justify-content: center; /* Căn giữa logo theo chiều ngang */
+    align-items: center; /* Căn giữa logo theo chiều dọc */
+  }
+  
+  .footer-logo img {
+    width: 100px; /* Kích thước logo */
+    height: auto;
+  }
+  
+  .footer-section {
+    flex: 1; /* Các phần còn lại chia đều không gian */
+    min-width: 200px;
+  }
+  
+  .footer-section h4 {
+    color: var(--white);
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  .footer-section ul {
+    list-style: none; /* Bỏ gạch đầu dòng */
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 8px 0;
+  }
+  
+  .footer-section a {
+    text-decoration: none;
+    color: hsl(210, 8%, 80%);
+    transition: color 0.2s ease;
+    
+  }
+  
+  .footer-section a:hover {
+    color: var(--yellow);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    color: #b9b9b9;
+    font-size: 12px;
+  }
+  
+  .footer-bottom a {
+    color: var(--yellow);
+
+  }
+  
+  .footer-bottom a:hover {
+    color: var(--yellow);
+  }
+  /* Định dạng phần Social Media */
+.footer-social-container {
+    text-align: left;
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .footer-social li {
+    font-size: 18px;
+  }
+  
+  .footer-social a {
+    color: var(--light-gray);
+    transition: color 0.3s ease;
+  }
+  
+  .footer-social a:hover {
+    color: var(--yellow);
+  }
+  
+  .footer-social i {
+    font-size: 18px; /* Kích thước biểu tượng */
+  }
