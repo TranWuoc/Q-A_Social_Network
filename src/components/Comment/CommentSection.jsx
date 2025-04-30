@@ -8,7 +8,8 @@ import {
 } from "../../actions/comments";
 import "./CommentSection.css"; // Import the CSS file
 import MyEditor from "../../components/MyEditor/MyEditor";
- import ReactHtmlParser from "html-react-parser"; 
+import ReactHtmlParser from "html-react-parser"; 
+import socket from "../../utils/socket";
 
 export const CommentsSection = ({ answerId, questionId }) => {
   const dispatch = useDispatch();
@@ -28,16 +29,101 @@ export const CommentsSection = ({ answerId, questionId }) => {
     }
   }, [dispatch, answerId, comments.length]);
 
-  const handleAddComment = () => {
+  // Join room
+  useEffect(() => {
+    
+      socket.emit("join-room", questionId);
+    
+  
+    return () => {
+      socket.emit("leave-room", questionId);
+    };
+  }, [questionId]);
+
+
+  // On receive comment (Socket)
+  useEffect(() => {
+    const handleNewComment = (comment) => {
+      console.log("hùnggggggggggggggggggggggg")
+      console.log(comment);
+      // Nếu comment nhận được thuộc về đúng answer đang xem
+      if (comment.answerId === answerId) {
+        dispatch({
+          type: "NEW_COMMENT_RECEIVED",
+          payload: comment,
+        });
+      }
+    };
+  
+    socket.on("receive-comment", handleNewComment);
+  
+    return () => {
+      socket.off("receive-comment", handleNewComment);
+    };
+  }, [answerId, dispatch]);
+
+  // On update comment (Socket)
+  useEffect(() => {
+    const handleUpdatedComment = (updatedComment) => {
+      dispatch({
+        type: "COMMENT_UPDATED",
+        payload: updatedComment,
+      });
+    };
+  
+    socket.on("receive-updated-comment", handleUpdatedComment);
+  
+    return () => {
+      socket.off("receive-updated-comment", handleUpdatedComment);
+    };
+  }, [dispatch]);
+
+  // On delete comment (Socket)
+  useEffect(() => {
+    const handleDeletedComment = ({ commentId, answerId }) => {
+      dispatch({
+        type: "COMMENT_DELETED",
+        payload: { commentId, answerId },
+      });
+    };
+  
+    socket.on("receive-deleted-comment", handleDeletedComment);
+  
+    return () => {
+      socket.off("receive-deleted-comment", handleDeletedComment);
+    };
+  }, [dispatch]);
+
+
+  const handleAddComment = async () => {
     if (newComment.trim()) {
-      dispatch(createComment(answerId, { content: newComment, questionId })); // Use questionId
+
+      const createdComment = await dispatch(createComment(answerId, { content: newComment, questionId })); // Use questionId
+
+      socket.emit("send-comment", createdComment);
+
       setNewComment("");
       setShowCommentBox(false);
     }
   };
 
-  const handleDeleteComment = (commentId) => {
-    dispatch(deleteComment(commentId, answerId));
+  const handleUpdateComment = async () => {
+    if (editingContent.trim()) {
+      const updatedComment = await dispatch(
+        updateComment(editingCommentId, { content: editingContent, questionId })
+      ); // Use questionId
+
+      socket.emit("update-comment", updatedComment);
+
+      setEditingCommentId(null);
+      setEditingContent("");
+    }
+  };
+
+  const handleDeleteComment = async (commentId) => {
+    const deletedComment = await dispatch(deleteComment(commentId, answerId));
+    socket.emit("delete-comment", deletedComment);
+
   };
 
   const handleEditComment = (comment) => {
@@ -45,15 +131,7 @@ export const CommentsSection = ({ answerId, questionId }) => {
     setEditingContent(comment.content);
   };
 
-  const handleUpdateComment = () => {
-    if (editingContent.trim()) {
-      dispatch(
-        updateComment(editingCommentId, { content: editingContent, questionId })
-      ); // Use questionId
-      setEditingCommentId(null);
-      setEditingContent("");
-    }
-  };
+  
 
   return (
     <div className="comments-section">
