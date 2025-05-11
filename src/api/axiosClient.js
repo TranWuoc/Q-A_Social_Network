@@ -9,10 +9,8 @@ const axiosClient = axios.create({
   },
   withCredentials: true,
 });
-
 let isRefreshing = false; // Trạng thái refresh token
 let failedQueue = []; // Lưu các request bị pending
-
 const processQueue = (error, token = null) => {// Xử lý các request bị pending
   failedQueue.forEach((prom) => {// Duyệt qua mảng các request bị pending
     if (error) {
@@ -49,7 +47,6 @@ const logOut = async () => {
     toast.error("Session expired. Please log in again.");
   }
 };
-
 // Hàm làm mới accessToken sử dụng refreshToken
 const refreshAccessToken = async () => {
   const refreshToken = localStorage.getItem("refreshToken");
@@ -57,7 +54,6 @@ const refreshAccessToken = async () => {
     console.error("[Refresh] No refresh token found.");
     throw new Error("Refresh token missing.");
   }
-
   try {
     console.log("[Refresh] Requesting new access token...");
     const response = await axios.post(
@@ -65,17 +61,13 @@ const refreshAccessToken = async () => {
       { token: refreshToken },
       { baseURL: "http://localhost:8080/api/v1" }
     );
-
     const { accessToken, refreshToken: newRefreshToken } = response.data.result || {};
     if (accessToken && newRefreshToken) {
       console.log("[Refresh] New tokens received:", { accessToken, newRefreshToken });
-      // Lưu cả token mới vào localStorage
       localStorage.setItem("token", accessToken);
       localStorage.setItem("refreshToken", newRefreshToken);
-
       // Cập nhật header Authorization của axiosClient với token mới
       axiosClient.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-
       return accessToken;
     } else {
       throw new Error("[Refresh] Invalid response structure.");
@@ -131,7 +123,6 @@ axiosClient.interceptors.response.use(
       toast.error("Sai mật khẩu hoặc tài khoản. Vui lòng thử lại.");
       return Promise.reject(error); // Dừng xử lý thêm
     }
-
     // Các lỗi khác từ backend
     if (error.response) {
       const { status, data } = error.response;

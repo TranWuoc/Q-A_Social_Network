@@ -17,17 +17,16 @@ const Tags = ({ searchTerm }) => {
   useEffect(() => {
     const fetchTags = async () => {
       try {
+        // Fetch tags from the API
         const response = await axiosClient.get("/questions/getAllTag", {
           params: { page, size },
-        }); // Cập nhật đường dẫn nếu cần
+        }); 
         const tagsArray = Array.isArray(response.data.result.data)
           ? response.data.result.data
           : [];
 
         setTotalTags(response.data.result.totalElements);
         setTotalPages(response.data.result.totalPages);
-
-        
         setTags(tagsArray);
         setLoading(false);
       } catch (error) {

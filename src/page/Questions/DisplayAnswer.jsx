@@ -60,7 +60,6 @@ const DisplayAnswer = ({ answers, handleShare, question }) => {
     if (User?.result?._id !== answerUserId) {
       return;
     }
-
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this answer?"
     );

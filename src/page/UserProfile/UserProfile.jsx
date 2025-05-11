@@ -91,6 +91,7 @@ const UserProfile = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
+        // Fetch user data from the API
         const response = await axiosClient.get(`/users/getOne/${id}`);
         setCurrentProfile(response.data.result);
         setDisplayName(response.data.result.username || "");
@@ -140,10 +141,10 @@ const UserProfile = () => {
 
   const handleSave = async () => {
     const updatedProfile = {
-      username: displayName, // Cập nhật username
-      location: location, // Cập nhật location
-      slogan: slogan, // Cập nhật slogan
-      aboutMe: aboutmeBody, // Truyền vào aboutMe
+      username: displayName, 
+      location: location, 
+      slogan: slogan, 
+      aboutMe: aboutmeBody, 
     };
 
     console.log("Updating profile with data:", updatedProfile);
@@ -155,7 +156,6 @@ const UserProfile = () => {
 
       if (result) {
         toast.success("Profile updated successfully!");
-        // Cập nhật currentProfile với thông tin mới
         setCurrentProfile({ ...currentProfile, ...updatedProfile });
         setActiveTab("profile");
       } else {
@@ -170,8 +170,8 @@ const UserProfile = () => {
   const handleCancel = () => {
     setDisplayName(currentProfile?.username || "");
     setLocation(currentProfile?.location || "");
-    setAboutMeBody(currentProfile?.aboutMe || ""); // Khôi phục description
-    setSlogan(currentProfile?.slogan || ""); // Khôi phục slogan
+    setAboutMeBody(currentProfile?.aboutMe || ""); 
+    setSlogan(currentProfile?.slogan || "");
     setActiveTab("profile");
   };
 

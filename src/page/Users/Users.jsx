@@ -18,14 +18,13 @@ const Users = ({ searchTerm, onSelectUser }) => {
   useEffect(() => {
     const fetchAllUsers = async () => {
       try {
+        // Fetch users from the API
         const response = await axiosClient.get(`/users/getAll`, {
           params: { page, size },
         });
         const usersArray = Array.isArray(response.data.result.data)
           ? response.data.result.data
           : [];
-
-        // Lưu tổng số người dùng và tổng số trang từ phản hồi
         setTotalUsers(response.data.result.totalElements);
         setTotalPages(response.data.result.totalPages);
 
