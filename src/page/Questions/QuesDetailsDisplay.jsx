@@ -37,6 +37,7 @@ const QuesDetailsDisplay = () => {
   const user = useSelector((state) => state.currentUser);
   const location = useLocation();
   const userId = localStorage.getItem("userId");
+  const userName = localStorage.getItem("username");
   const url = "http://localhost:3000";
   const hasFetched = useRef(false); // Track whether the fetch has already occurred
 
@@ -50,6 +51,7 @@ const QuesDetailsDisplay = () => {
         setQuestion(questionData);
         setAnswers(questionData.answers || []);
         dispatch(getCommentsByQuestionId(id));
+        console.log("Loaded question:", questionData);
       } catch (error) {
         toast.error("Failed to fetch question details. Please try again later.");
         navigate("/Questions");
@@ -62,7 +64,10 @@ const QuesDetailsDisplay = () => {
     const addView = async () => {
       try {
         const viewedQuestions = JSON.parse(sessionStorage.getItem("viewedQuestions")) || [];
-  
+        const questionUserId = sessionStorage.getItem("userId");
+        console.log("Viewed Questions:", viewedQuestions);
+          console.log("Questin ID:", question.userId);
+
         // Ensure question data is loaded before checking ownership
         if (question.userId === userId) {
           console.log("Cannot add view: This question belongs to the user.");
@@ -108,7 +113,10 @@ useEffect(() => {
  const handleSubmit = async (e) => {
    e.preventDefault();
    if (!answerBody) return alert("Answer cannot be empty");
-  if (userId === question.userId) {
+  if (question) {
+  console.log("Current question object:", question);
+}
+   if (userName === question?.userName) {
     toast.error("Tự hỏi tự trả lời luôn mà");
     return;
   }
@@ -171,7 +179,7 @@ useEffect(() => {
   
 
   const handleDelete = (questionId, noOfAnswers) => {
-    if (userId!== question.userId) {
+    if (userName!== question.username) {
       toast.error("You are not the owner of this question.");
       return;
     }
@@ -252,7 +260,7 @@ useEffect(() => {
                   </span>
                 </button>
                 {/* Chỉ hiển thị Delete và Edit nếu user là chủ sở hữu của câu hỏi */}
-                {userId === question?.userId && (
+                {userName === question?.username && (
                   <>
                     <button
                       type="button"

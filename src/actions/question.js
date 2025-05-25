@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 export const fetchQuestionDetails = async (id) => {
   try {
     const response = await axiosClient.get(`/questions/getQuestionsByConditions?questionId=${id}`);
+    console.log("Response from fetchQuestionDetails:", response.data);
     if (response.data && response.data.result && response.data.result.data.length > 0) {
       const question = response.data.result.data.find(q => q.questionId === id);
       if (question) {
